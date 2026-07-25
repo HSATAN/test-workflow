@@ -5,5 +5,8 @@ jobs:
          runs-on: ubuntu-latest
          steps:
               - name: 这是第一个步骤
+                id: step1
                 run: |
-                    echo "这是第一个步骤的输出"
+                    echo "myoutput=这是我的输出" >> "$GITHUB_OUTPUT"
+              - name: step2
+                run: echo "${{ steps.step1.outputs.myoutput }}"
