@@ -1,0 +1,9 @@
+name: 我的第一个测试流水线
+on: push
+jobs:
+    build:
+         runs-on: ubuntu-latest
+         steps:
+              - name: 这是第一个步骤
+                run: |
+                    echo "这是第一个步骤的输出"
