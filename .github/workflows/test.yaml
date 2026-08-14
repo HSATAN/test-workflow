@@ -14,4 +14,4 @@ jobs:
                 run: |
                     echo "myoutput=这是我的输出" >> "$GITHUB_OUTPUT"
               - name: step2
-                run: echo "${{ steps.step1.outputs.myoutput }}"
+                run: echo "${{ steps.step:1.outputs.myoutput }}"
