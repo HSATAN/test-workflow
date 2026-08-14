@@ -7,10 +7,15 @@ on:
 jobs:
     build-test:
          runs-on: ubuntu-latest
-         if: github.ref_name == 'main'
+         
          steps:
+              - name: 分支检查
+                if: github.ref_name != 'main'
+                run: |
+                  echo "警告 当前分支 ${{github.ref_name}} 不能自动执行Ci流程"
               - name: 这是第一个步骤
                 id: step-1
+                if: github.ref_name == 'main'
                 run: |
                     echo "myoutput=这是我的输出" >> "$GITHUB_OUTPUT"
               - name: step2
