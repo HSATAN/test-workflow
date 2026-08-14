@@ -1,7 +1,7 @@
 name: 我的第一个测试流水线
 on: push
 jobs:
-    build:
+    build-test:
          runs-on: ubuntu-latest
          steps:
               - name: 这是第一个步骤
