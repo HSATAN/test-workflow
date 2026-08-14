@@ -1,8 +1,13 @@
 name: 我的第一个测试流水线
-on: push
+on: 
+  push:
+    branches: 
+      - main
+  workflow_dispatch: #手动触发
 jobs:
-    build-test:
+    build:test:
          runs-on: ubuntu-latest
+         if: github.ref_name == 'main'
          steps:
               - name: 这是第一个步骤
                 id: step1
