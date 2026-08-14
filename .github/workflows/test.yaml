@@ -5,12 +5,12 @@ on:
       - main
   workflow_dispatch: #手动触发
 jobs:
-    build:test:
+    build-test:
          runs-on: ubuntu-latest
          if: github.ref_name == 'main'
          steps:
               - name: 这是第一个步骤
-                id: step1
+                id: step:1
                 run: |
                     echo "myoutput=这是我的输出" >> "$GITHUB_OUTPUT"
               - name: step2
