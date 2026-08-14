@@ -10,8 +10,8 @@ jobs:
          if: github.ref_name == 'main'
          steps:
               - name: 这是第一个步骤
-                id: step:1
+                id: step-1
                 run: |
                     echo "myoutput=这是我的输出" >> "$GITHUB_OUTPUT"
               - name: step2
-                run: echo "${{ steps.step:1.outputs.myoutput }}"
+                run: echo "${{ steps.step-1.outputs.myoutput }}"
